@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Page Matieres</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/index.css}">
+</head>
+<body>
+
+<h1>Matieres</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th> NUMERO MATIERE</th>
+			<th> MATIERE</th>
+			<th> COEF</th>
+			<th>DATE_DEBUT</th>
+			<th>DATE_FIN</th>
+			<th>Nom Enseignant</th>
+			<th>Prenom Enseignant</th>
+			
+
+		</tr>
+		<tr th:each="m:${matieres}">
+
+
+			<td th:text="${m.id}"></td>
+			<td th:text="${m.numeroMatiere}"></td>
+			<td th:text="${m.nom}"></td>
+			<td th:text="${m.coef}"></td>
+			<td th:text="${m.dateDebut}"></td>
+			<td th:text="${m.dateFin}"></td>
+			<td th:text="${m.enseignant.nom}"></td>
+			<td th:text="${m.enseignant.prenom}"></td>
+			<td><a th:href="@{matiere(id=${m.id})}" />Infos Matiere </td>
+			<td><a th:href="@{modifierMatiere(id=${m.id})}" />modifier</td>
+
+			
+
+
+
+		</tr>
+	</table>
+	<a th:href="@{ajouterMatiere}"/>Ajouter Matiere</a></br>
+	<a th:href="@{enseignants}"/>Liste Enseignants</a></br>
+	
+
+</body>
+</html>

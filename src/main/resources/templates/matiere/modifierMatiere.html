@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Page Modifier Matiere</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/formulaire.css}">
+</head>
+<body>
+
+<div class="form-style-5">
+<form th:action="@{modifierMatiere}" method="POST" th:object="${matiere}">
+<legend> Modifier Matiere</legend>
+
+		
+		 <input type="hidden" name="id" placeholder="id" th:field="*{id}"  id="id" /><br> 
+		 
+		 <label for="numeroMatiere">NnumeroMatiere</label>
+		 <input type="text"name="numeroMatiere" placeholder="numeroMatiere" th:field="*{numeroMatiere}" id="numeroMatiere" /><br>  
+		 
+		 <label for="nom">Matiere</label> 
+		 <input type="text" name="nom"placeholder="matiere" th:field="*{nom}" id="nom" /><br>
+		 
+		 <label for="coef">COEF</label>
+		 <input type="coef" name="coef" placeholder="coef" id="coef" th:field="*{coef}" th:value="${matiere.coef}"/><br>
+		 
+		  <label for="dateDebut">Date Debut</label>
+		 <input type="text"name="dateDebut" placeholder="date Debut" th:field="*{dateDebut}" id="dateDebut" /><br>  
+		 
+		  <label for="dateFin">Date Fin</label>
+		 <input type="text"name="dateFin" placeholder="date Fin" th:field="*{dateFin}" id="dateFin" /><br>  
+		   <label for="enseignants">Enseignants</label>
+		   
+		   <select name="idEnseignant" >
+		    <option th:each= "e : ${enseignants}" th:value="${e.id}" th:text="${e.nom + ' ' + e.prenom}"></option>
+		 </select><br> 
+		 
+		
+		
+		
+		
+
+		<input type="submit" value="valider">
+	</form>
+	</div>
+
+</body>
+</html>

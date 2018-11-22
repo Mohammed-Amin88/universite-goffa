@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Page Notes</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/index.css}">
+</head>
+<body>
+
+<h1>Notes</h1>
+	<table>
+		<tr>
+		
+		
+			<th> Note</th>
+			<th> Etudiant</th>
+			<th> Matiere</th>
+		
+			
+
+		</tr>
+		<tr th:each="n:${notes}">
+
+
+			<td th:text="${n.note}"></td>
+			<td th:text="${n.etudiant.nom} + ' ' + ${n.etudiant.prenom}" ></td>
+	       <td th:text="${n.matiere.nom}"></td>
+			
+			
+
+
+
+		</tr>
+	</table>
+			<a th:href="@{etudiants}"/>Liste Etudiants</a></br>
+
+</body>
+</html>

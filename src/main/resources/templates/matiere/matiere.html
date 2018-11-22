@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Page Infos Matiere</title>
+<link rel="stylesheet" type="text/css" th:href="@{css/index.css}">
+</head>
+<body>
+
+<h1>ID</h1>
+<h2 th:text="${matiere.id}"></h2>
+<h1>Numero Matiere</h1>
+<h2 th:text="${matiere.numeroMatiere}"></h2>
+<h1>Matiere</h1>
+<h2 th:text="${matiere.nom}"></h2>
+<h1>COEF</h1>
+<h2 th:text="${matiere.coef}"></h2>
+<h1>DATE DEBUT</h1>
+<h2 th:text="${matiere.dateDebut}"></h2>
+<h1>DATE FIN</h1>
+<h2 th:text="${matiere.dateFin}"></h2>
+<a th:href="@{matieres}"/>Liste Matieres</a></br>
+
+</body>
+</html>
